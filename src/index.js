@@ -7,20 +7,21 @@ import {createStore, applyMiddleware} from 'redux';
 import App from './App/index';
 import {reducer} from './App/reducer';
 import {BrowserRouter as Router} from 'react-router-dom';
+import 'rxjs';
+
+//thunk
+import thunk from 'redux-thunk';
 
 //redux observable
 import {createEpicMiddleware} from 'redux-observable';
 import {epic} from './App/epic';
-
-//thunk
-import thunk from 'redux-thunk';
 
 //mui
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 const epicMiddleware = createEpicMiddleware(epic);
 
-const store = createStore(reducer, applyMiddleware(thunk));
+const store = createStore(reducer, applyMiddleware(thunk, epicMiddleware));
 
 ReactDOM.render(
     <Provider store={store}>

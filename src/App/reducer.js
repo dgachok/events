@@ -1,9 +1,11 @@
 import {combineReducers} from 'redux';
 
-const user = (state = {}, action) => {
+const users = (state = [], action) => {
     switch (action.type) {
         case 'LOAD_USER_ACTION':
-            return true;
+            return;
+        case 'LOADED_USERS_ACTION':
+            return action.payload.users;
         default:
             return state;
     }
@@ -11,5 +13,5 @@ const user = (state = {}, action) => {
 
 
 export const reducer = combineReducers({
-    user
+    users
 });

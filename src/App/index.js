@@ -1,9 +1,12 @@
 import {connect} from 'react-redux';
 import {withRouter} from 'react-router-dom';
 import App from './component';
+import {loadUsers} from "./actions";
 
 const mapStateToProps = state => ({
-    user: state.user
+    users: state.users
 });
-
-export default withRouter(connect(mapStateToProps)(App));
+const mapDispatchToProps = (dispatch) => ({
+    loadUsers: () => dispatch(loadUsers()),
+});
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(App));
