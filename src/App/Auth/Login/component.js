@@ -6,6 +6,19 @@ import google from '../../../images/google.png';
 import facebook from '../../../images/facebook.png';
 
 class Login extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {};
+        this.onChange = this.onChange.bind(this);
+    }
+
+    onChange = (event) =>
+        this.setState(...this.state, {[event.target.name]: event.target.value});
+
+    onSubmit = (event) => {
+        event.preventDefault();
+        this.props.authenticate(this.state);
+    };
 
     render() {
         return (
@@ -36,6 +49,7 @@ class Login extends Component {
                                 hintText="Email Field"
                                 floatingLabelText="Email"
                                 type="email"
+                                name="email"
                                 fullWidth={true}
                             />
                         </div>
@@ -44,11 +58,13 @@ class Login extends Component {
                                 hintText="Password Field"
                                 floatingLabelText="Password"
                                 type="password"
+                                name="password"
                                 fullWidth={true}
                             />
                         </div>
                         <div className="form__submit">
                             <RaisedButton label="Submit"
+                                          onClick={this.onSubmit}
                                           className="m-t-sm"
                                           type="submit" />
 

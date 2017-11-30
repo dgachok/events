@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import Login from '../Auth/Login/component';
+import Login from '../Auth/Login/index';
 import Registration from '../Auth/Registration/index';
 import Footer from './../Core/Footer/component';
 import {Route} from 'react-router-dom'

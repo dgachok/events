@@ -8,5 +8,5 @@ export const registerEpic = action$ =>
     action$.ofType(REGISTER_USER)
         .mergeMap(action => ajax.post(`/users`, action.payload)
             .map(() => push('/'))
-            .catch((err) => Observable.of(showError(err.message)))
+            .catch((err) => Observable.of(showError(err)))
         );
