@@ -17,6 +17,7 @@ class Login extends Component {
 
     onSubmit = (event) => {
         event.preventDefault();
+        console.log('this.state', this.state);
         this.props.authenticate(this.state);
     };
 
@@ -50,6 +51,7 @@ class Login extends Component {
                                 floatingLabelText="Email"
                                 type="email"
                                 name="email"
+                                onChange={this.onChange}
                                 fullWidth={true}
                             />
                         </div>
@@ -59,6 +61,7 @@ class Login extends Component {
                                 floatingLabelText="Password"
                                 type="password"
                                 name="password"
+                                onChange={this.onChange}
                                 fullWidth={true}
                             />
                         </div>
