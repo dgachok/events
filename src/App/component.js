@@ -7,10 +7,6 @@ import Core from './Core/component';
 import Error from './Core/Error/index';
 
 class App extends Component {
-    componentDidMount() {
-        this.props.loadUsers();
-    }
-
     render() {
         return (
             <div className="container">

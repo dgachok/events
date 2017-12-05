@@ -8,8 +8,10 @@ class Auth extends Component {
     render() {
         return (
             <div className="container__content">
-                <Route path={`/login`} component={Login}/>
-                <Route path={`/registration`} component={Registration}/>
+                <div className="content">
+                    <Route path={`/login`} component={Login}/>
+                    <Route path={`/registration`} component={Registration}/>
+                </div>
                 <Footer/>
             </div>
         );

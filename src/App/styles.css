@@ -18,6 +18,11 @@
     flex-direction: column;
 }
 
+.content {
+    flex: 1 1 auto;
+    height: 100%;
+}
+
 .m-t-sm {
     margin-top: 10px;
 }

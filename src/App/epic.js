@@ -7,7 +7,7 @@ import {loginEpic} from "./Auth/Login/epic";
 const usersEpic = action$ =>
     action$.ofType(LOAD_USERS_ACTION)
         .mergeMap(action =>
-            ajax.getJSON(`/users`)
+            ajax.getJSON(`/api/v1/users`)
                 .map(loadedUsers)
         );
 
