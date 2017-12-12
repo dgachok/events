@@ -1,5 +1,5 @@
-import {combineReducers} from 'redux';
-import {LOAD_USERS_ACTION, LOADED_USERS_ACTION, SHOW_ERROR_ACTION, CLOSE_ERROR_ACTION} from "./actions";
+import {LOAD_USERS_ACTION, LOADED_USERS_ACTION, SHOW_ERROR_ACTION, CLOSE_ERROR_ACTION, APP_INITIALIZED_ACTION} from "./actions";
+import {auth} from "./Auth/Login/reducer";
 
 const users = (state = [], action) => {
     switch (action.type) {
@@ -15,15 +15,24 @@ const users = (state = [], action) => {
 const error = (state = '', action) => {
     switch (action.type) {
         case SHOW_ERROR_ACTION:
-            return action.payload.error;
+            return action.payload;
         case CLOSE_ERROR_ACTION:
             return '';
         default:
             return state;
     }};
 
+const isInitApp = (state = false, action) => {
+    switch (action.type) {
+        case APP_INITIALIZED_ACTION:
+            return true;
+        default:
+            return state;
+    }};
 
-export const reducers = combineReducers({
+export const reducers = {
     users,
-    error
-});
+    error,
+    auth,
+    isInitApp
+};

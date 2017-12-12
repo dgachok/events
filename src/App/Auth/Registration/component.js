@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import './styles.css';
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
+import ChipInput from 'material-ui-chip-input'
 
 class Registration extends Component {
     constructor(props) {
@@ -12,6 +13,9 @@ class Registration extends Component {
 
     onChange = (event) =>
         this.setState(...this.state, {[event.target.name]: event.target.value});
+
+    onChangeTags = (tags) =>
+        this.setState(...this.state, {tags: tags});
 
     onSubmit = (event) => {
         event.preventDefault();
@@ -57,6 +61,13 @@ class Registration extends Component {
                             name="lastName"
                             fullWidth={true}
                         />
+                        <ChipInput
+                            fullWidth={true}
+                            hintText="Press enter after typing"
+                            floatingLabelText="Tags"
+                            onChange={this.onChangeTags}
+                        />
+                        <p />
                         <RaisedButton label="Register"
                                       onClick={this.onSubmit}
                                       className="m-t-sm"

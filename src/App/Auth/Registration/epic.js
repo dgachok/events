@@ -6,7 +6,7 @@ import {Observable} from 'rxjs/Observable';
 
 export const registerEpic = action$ =>
     action$.ofType(REGISTER_USER)
-        .mergeMap(action => ajax.post(`/api/v1/users`, action.payload)
+        .mergeMap(action => ajax.post(`/api/v1/auth/registration`, action.payload)
             .map(() => push('/login'))
             .catch((err) => Observable.of(showError(err.message)))
         );

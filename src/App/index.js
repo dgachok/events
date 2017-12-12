@@ -1,12 +1,13 @@
 import {connect} from 'react-redux';
 import {withRouter} from 'react-router-dom';
 import App from './component';
-import {loadUsers} from "./actions";
+import {initialize, initialized} from "./actions";
 
 const mapStateToProps = state => ({
-    users: state.users
+    isInitApp: state.isInitApp
 });
 const mapDispatchToProps = (dispatch) => ({
-    loadUsers: () => dispatch(loadUsers()),
+    initialize: (token) => dispatch(initialize(token)),
+    initialized: (token) => dispatch(initialized()),
 });
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(App));

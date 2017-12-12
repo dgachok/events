@@ -34,6 +34,8 @@ const store = createStore(
     }),
     applyMiddleware(thunk, epicMiddleware, middleware));
 
+export default store;
+
 ReactDOM.render(
     <Provider store={store}>
         <ConnectedRouter history={history}>
