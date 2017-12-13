@@ -23,6 +23,15 @@
     list-style-type: none;
 }
 
+.navigation__item {
+    display: flex;
+    align-items: center;
+}
+
+.navigation__avatar{
+    margin: 0 5px;
+}
+
 .navigation__item > a{
     text-decoration: none;
     margin: 0 10px;

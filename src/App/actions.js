@@ -20,9 +20,9 @@ export const loadUser = () => ({
     type: LOAD_USER_ACTION
 });
 
-export const loadedUser = (users) => ({
-    type: LOADED_USERS_ACTION,
-    payload: users
+export const loadedUser = (user) => ({
+    type: LOADED_USER_ACTION,
+    payload: user
 });
 
 export const showError = (error) => ({

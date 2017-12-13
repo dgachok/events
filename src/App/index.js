@@ -4,7 +4,8 @@ import App from './component';
 import {initialize, initialized} from "./actions";
 
 const mapStateToProps = state => ({
-    isInitApp: state.isInitApp
+    isInitApp: state.isInitApp,
+    isAuthenticated: state.auth.isAuthenticated
 });
 const mapDispatchToProps = (dispatch) => ({
     initialize: (token) => dispatch(initialize(token)),

@@ -1,4 +1,6 @@
-import {LOAD_USERS_ACTION, LOADED_USERS_ACTION, SHOW_ERROR_ACTION, CLOSE_ERROR_ACTION, APP_INITIALIZED_ACTION} from "./actions";
+import {LOAD_USERS_ACTION, LOADED_USERS_ACTION, SHOW_ERROR_ACTION, CLOSE_ERROR_ACTION, APP_INITIALIZED_ACTION
+    , LOADED_USER_ACTION
+} from "./actions";
 import {auth} from "./Auth/Login/reducer";
 
 const users = (state = [], action) => {
@@ -11,6 +13,16 @@ const users = (state = [], action) => {
             return state;
     }
 };
+
+const user = (state = {}, action) => {
+    switch (action.type) {
+        case LOADED_USER_ACTION:
+            return action.payload.user;
+        default:
+            return state;
+    }
+};
+
 
 const error = (state = '', action) => {
     switch (action.type) {
@@ -33,6 +45,7 @@ const isInitApp = (state = false, action) => {
 export const reducers = {
     users,
     error,
+    user,
     auth,
     isInitApp
 };

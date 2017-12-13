@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
 import './styles.css';
 import {Switch, Route} from 'react-router-dom'
-import Header from './Core/Header/component';
+import Header from './Core/Header/index';
 import Main from './Home/component';
-import Core from './Core/component';
+import Core from './Core/index';
 import Error from './Core/Error/index';
 
 class App extends Component {

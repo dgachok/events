@@ -12,7 +12,7 @@ const userEpic = action$ =>
     action$.ofType(LOAD_USER_ACTION)
         .mergeMap(action =>
             fetch('get', '/api/v1/users/current-user')
-                .flatMap((user) => Observable.merge(loadedUser(user)))
+                .map((user) => loadedUser(user))
                 .catch((err) => showError(err))
         );
 

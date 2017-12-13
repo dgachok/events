@@ -6,7 +6,7 @@ import Footer from './../Core/Footer/component';
 import {Route, Switch, Redirect} from 'react-router-dom'
 import {requireAuthentication} from "../Auth/AuthenticatedComponent";
 
-class Auth extends Component {
+class Core extends Component {
     render() {
         return (
             <div className="container__content">
@@ -24,4 +24,4 @@ class Auth extends Component {
     }
 }
 
-export default Auth;
+export default Core;
