@@ -12,5 +12,5 @@ export const loginEpic = (action$, store) =>
                     Observable.of(authenticateSuccess(token.response)),
                     Observable.of(loadUser()),
                     Observable.of(push('/events'))))
-            .catch((err) => showError(err))
+            .catch((err) => Observable.of(showError(err)))
         );

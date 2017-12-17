@@ -13,7 +13,7 @@ const userEpic = action$ =>
         .mergeMap(action =>
             fetch('get', '/api/v1/users/current-user')
                 .map((user) => loadedUser(user))
-                .catch((err) => showError(err))
+                .catch((err) => Observable.of(showError(err)))
         );
 
 const initEpic = action$ =>

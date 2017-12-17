@@ -24,12 +24,12 @@ const user = (state = {}, action) => {
 };
 
 
-const error = (state = '', action) => {
+const error = (state = {isError: false}, action) => {
     switch (action.type) {
         case SHOW_ERROR_ACTION:
-            return action.payload;
+            return Object.assign(action.payload.response, {isError: true});
         case CLOSE_ERROR_ACTION:
-            return '';
+            return {isError: false};
         default:
             return state;
     }};

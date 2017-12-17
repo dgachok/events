@@ -16,25 +16,22 @@ class Error extends Component {
         this.props.closeError();
     };
 
-    componentWillUpdate() {
-        if (this.props.error) {
+    componentWillReceiveProps() {
+        console.log('componentWillUpdate this.props', this.props.error);
+        if (this.props.error.isError) {
             this.handleOpen();
         }
     }
 
     render() {
         const {error} = this.props;
+        console.log('this.props error', error);
         const actions = [
             <FlatButton
                 label="Cancel"
                 primary={true}
                 onClick={this.handleClose}
-            />,
-            <FlatButton
-                label="Discard"
-                primary={true}
-                onClick={this.handleClose}
-            />,
+            />
         ];
 
         return (
@@ -45,9 +42,13 @@ class Error extends Component {
                     open={this.state.open}
                     onRequestClose={this.handleClose}
                 >
-                    <h2>Error</h2>
+                    <h2>Something going wrong</h2>
                     <p />
-                    {error}
+                    { Array.isArray(error.errors)
+                        ? error.errors.map((error, i) =>
+                            (<div key={i}>{(error && error.msg) ? error.msg : ''}</div>))
+                        : null
+                    }
                 </Dialog>
             </div>
         );
