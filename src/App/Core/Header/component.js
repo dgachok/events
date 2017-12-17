@@ -3,7 +3,11 @@ import {Link, NavLink} from 'react-router-dom'
 import './styles.css';
 import logo from './../../../images/logo.png';
 import Avatar from 'material-ui/Avatar';
-import FontIcon from 'material-ui/FontIcon';
+import Badge from 'material-ui/Badge';
+import IconButton from 'material-ui/IconButton';
+import NotificationsIcon from 'material-ui/svg-icons/social/notifications';
+import PersonIcon from 'material-ui/svg-icons/social/person';
+import EmailIcon from 'material-ui/svg-icons/communication/email';
 
 class Header extends Component {
     render() {
@@ -20,18 +24,32 @@ class Header extends Component {
                             <nav>
                                 <ul className="header__navigation">
                                     <li className="navigation__item">
-                                        <Avatar className="navigation__avatar" icon={
-                                            <FontIcon />
-                                        }/>
+                                        <Badge
+                                            badgeContent={5}
+                                            primary={true}
+                                            className="navigation__icon"
+                                            badgeStyle={{top: 5, right: 7}}
+                                        >
+                                            <IconButton tooltip="Notifications">
+                                                <NotificationsIcon />
+                                            </IconButton>
+                                        </Badge>
+                                    </li>
+                                    <li className="navigation__item">
+                                        <Badge
+                                            badgeContent={10}
+                                            className="navigation__icon"
+                                            primary={true}
+                                            badgeStyle={{top: 5, right: 2}}
+                                        >
+                                            <IconButton tooltip="Mails">
+                                                <EmailIcon />
+                                            </IconButton>
+                                        </Badge>
                                     </li>
                                     <li className="navigation__item">
                                         <Avatar className="navigation__avatar" icon={
-                                            <FontIcon />
-                                        }/>
-                                    </li>
-                                    <li className="navigation__item">
-                                        <Avatar className="navigation__avatar" icon={
-                                            <FontIcon />
+                                            <PersonIcon  />
                                         }/>
                                     </li>
                                 </ul>

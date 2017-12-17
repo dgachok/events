@@ -1,0 +1,16 @@
+.events__container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.events__item {
+    flex: 0 0 32%;
+    margin-top: 10px;
+}
+
+.events__image {
+    height: 200px;
+    object-fit: cover;
+}

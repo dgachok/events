@@ -29,7 +29,9 @@
 }
 
 .navigation__avatar{
-    margin: 0 5px;
+    margin-left: 15px;
+    background: #ffffff;
+    border: darkblue;
 }
 
 .navigation__item > a{
@@ -50,6 +52,10 @@
     -webkit-transition: 0.2s;
     -o-transition: 0.2s;
     transition: 0.2s;
+}
+
+.navigation__icon {
+    padding: 10px 12px 0 0 !important;
 }
 
 .navigation__button:hover {
