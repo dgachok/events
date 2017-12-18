@@ -25,25 +25,25 @@ class Header extends Component {
                                 <ul className="header__navigation">
                                     <li className="navigation__item">
                                         <Badge
-                                            badgeContent={5}
-                                            primary={true}
-                                            className="navigation__icon"
-                                            badgeStyle={{top: 5, right: 7}}
-                                        >
-                                            <IconButton tooltip="Notifications">
-                                                <NotificationsIcon />
-                                            </IconButton>
-                                        </Badge>
-                                    </li>
-                                    <li className="navigation__item">
-                                        <Badge
-                                            badgeContent={10}
+                                            badgeContent={0}
                                             className="navigation__icon"
                                             primary={true}
                                             badgeStyle={{top: 5, right: 2}}
                                         >
                                             <IconButton tooltip="Mails">
                                                 <EmailIcon />
+                                            </IconButton>
+                                        </Badge>
+                                    </li>
+                                    <li className="navigation__item">
+                                        <Badge
+                                            badgeContent={0}
+                                            primary={true}
+                                            className="navigation__icon"
+                                            badgeStyle={{top: 5, right: 7}}
+                                        >
+                                            <IconButton tooltip="Notifications">
+                                                <NotificationsIcon />
                                             </IconButton>
                                         </Badge>
                                     </li>
