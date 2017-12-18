@@ -21,8 +21,8 @@ const initEpic = action$ =>
     action$.ofType(APP_INITIALIZE_ACTION)
         .flatMap((action) => {
                 return Observable.merge(
-                    Observable.of(authenticateSuccess(action.payload)),
                     Observable.of(loadUser()),
+                    Observable.of(authenticateSuccess(action.payload)),
                     Observable.of(initialized()))
             }
         );
