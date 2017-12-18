@@ -72,17 +72,16 @@ class Contacts extends Component {
                                     value={this.state.reason}
                                     onChange={this.handleChangeReason}
                                     floatingLabelText="Please specify a reason"
-                                    autoWidth={true}
+                                    fullWidth={true}
                                 >
                                     {items}
                                 </SelectField>
                                 <TextField
                                     hintText="Message"
-                                    value={this.state.message}
                                     floatingLabelText="Please describe the request"
                                     onChange={this.handleChangeMessage}
                                     multiLine={true}
-                                    rows={3}
+                                    rows={2}
                                     fullWidth={true}
                                 />
                             </div>
