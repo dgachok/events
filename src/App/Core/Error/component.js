@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import Dialog from 'material-ui/Dialog';
 import FlatButton from 'material-ui/FlatButton';
+import './styles.css';
 
 class Error extends Component {
     handleClose = () => {
@@ -20,6 +21,7 @@ class Error extends Component {
         return (
             <div>
                 <Dialog
+                    className="error"
                     actions={actions}
                     modal={false}
                     open={error.isError}
@@ -27,11 +29,13 @@ class Error extends Component {
                 >
                     <h2 className="red">Something going wrong</h2>
                     <p />
-                    { Array.isArray(error.errors)
+                    <ul>
+                        { Array.isArray(error.errors)
                         ? error.errors.map((error, i) =>
-                            (<div key={i}>{(error && error.msg) ? error.msg : ''}</div>))
+                            (<li key={i}>{(error && error.msg) ? error.msg : ''}</li>))
                         : null
                     }
+                    </ul>
                 </Dialog>
             </div>
         );

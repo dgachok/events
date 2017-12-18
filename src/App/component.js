@@ -5,6 +5,7 @@ import Header from './Core/Header/index';
 import Main from './Home/component';
 import Core from './Core/index';
 import Error from './Core/Error/index';
+import Contacts from './Contacts/index';
 
 class App extends Component {
     componentDidMount() {
@@ -35,6 +36,7 @@ class App extends Component {
                         : null
                 }
                 <Error />
+                <Contacts />
             </div>
         );
 

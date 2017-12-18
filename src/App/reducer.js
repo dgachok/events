@@ -2,6 +2,7 @@ import {LOAD_USERS_ACTION, LOADED_USERS_ACTION, SHOW_ERROR_ACTION, CLOSE_ERROR_A
     , LOADED_USER_ACTION
 } from "./actions";
 import {auth} from "./Auth/Login/reducer";
+import {contacts} from "./Contacts/reducer";
 
 const users = (state = [], action) => {
     switch (action.type) {
@@ -47,5 +48,6 @@ export const reducers = {
     error,
     user,
     auth,
-    isInitApp
+    isInitApp,
+    contacts
 };

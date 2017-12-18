@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import Login from '../Auth/Login/index';
 import Events from '../Content/Events/index';
 import Registration from '../Auth/Registration/index';
-import Footer from './../Core/Footer/component';
+import Footer from './../Core/Footer/index';
 import {Route, Switch, Redirect} from 'react-router-dom'
 import {requireAuthentication} from "../Auth/AuthenticatedComponent";
 

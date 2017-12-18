@@ -22,3 +22,7 @@ html, body {
 .red {
     color: darkred;
 }
+
+.cursor-pointer {
+    cursor: pointer;
+}

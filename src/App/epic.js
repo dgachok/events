@@ -7,6 +7,7 @@ import {authenticateSuccess} from "./Auth/Login/actions";
 import {fetch} from "./Auth/utils/fetch";
 import 'rxjs/add/operator/merge';
 import 'rxjs/add/operator/switchMap';
+import {contactsEpic} from "./Contacts/epic";
 
 const userEpic = action$ =>
     action$.ofType(LOAD_USER_ACTION)
@@ -30,5 +31,6 @@ export const epic = combineEpics(
     userEpic,
     registerEpic,
     loginEpic,
-    initEpic
+    initEpic,
+    contactsEpic
 );
