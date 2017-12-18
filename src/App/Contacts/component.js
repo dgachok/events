@@ -45,7 +45,7 @@ class Contacts extends Component {
         ];
         const actionsAfterSend = [
             <FlatButton
-                label="Cancel"
+                label="Close"
                 primary={true}
                 onClick={this.handleClose}
             />
@@ -63,8 +63,8 @@ class Contacts extends Component {
                         isSend
                             ?
                             <div className="contact__success">
-                                <CheckCircleIcon />
-                                <span>Message was sent</span>
+                                <CheckCircleIcon className="contact__success-icon" />
+                                <span className="contact__success-title">Message was sent</span>
                             </div>
                             :
                             <div>

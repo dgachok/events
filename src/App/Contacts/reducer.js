@@ -7,7 +7,8 @@ export const contacts = (state = {isShow: false, isSend: false}, action) => {
         case CLOSE_CONTACTS_ACTION:
             return {isShow: false, isSend: false};
         case SEND_MESSAGE_SUCCESS_ACTION:
-            return {isSend: true};
+            console.log('22');
+            return {isShow: true, isSend: true};
         default:
             return state;
     }

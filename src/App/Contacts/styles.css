@@ -1,4 +1,12 @@
-.contact__success{
+.contact__success {
     display: flex;
     align-items: center;
+}
+
+.contact__success-title {
+    margin-left: 10px;
+}
+
+.contact__success-icon {
+    color: darkgreen !important;
 }
