@@ -5,6 +5,9 @@ import './styles.css';
 import event1 from '../../../images/events-1.jpg';
 import event2 from '../../../images/events-2.jpg';
 import event3 from '../../../images/events-3.jpg';
+import Avatar from 'material-ui/Avatar';
+import PersonIcon from 'material-ui/svg-icons/social/person';
+import PeopleOutlineIcon from 'material-ui/svg-icons/social/people-outline';
 
 class Events extends Component {
     render() {
@@ -15,10 +18,9 @@ class Events extends Component {
                         <CardHeader
                             title="URL Avatar"
                             subtitle="Subtitle"
+                            avatar={ <Avatar icon={ <PersonIcon  /> }/> }
                         />
-                        <CardMedia
-                            
-                        >
+                        <CardMedia>
                             <img src={event3} className="events__image" alt="" />
                         </CardMedia>
                         <CardTitle title="Card title" subtitle="Card subtitle" />
@@ -29,8 +31,13 @@ class Events extends Component {
                             Aliquam dui mauris, mattis quis lacus id, pellentesque lobortis odio.
                         </CardText>
                         <CardActions>
-                            <FlatButton label="Interested" />
-                            <FlatButton label="Going" />
+                            <div className="events__cards-button">
+                                <FlatButton label="Interested" />
+                                <div className="events__cards-group">
+                                    <PeopleOutlineIcon  />
+                                    <span className="events__cards-numbers">0</span>
+                                </div>
+                            </div>
                         </CardActions>
                     </Card>
                 </div>
@@ -39,10 +46,9 @@ class Events extends Component {
                         <CardHeader
                             title="URL Avatar"
                             subtitle="Subtitle"
+                            avatar={ <Avatar icon={ <PersonIcon  /> }/> }
                         />
-                        <CardMedia
-                            overlay={<CardTitle title="Overlay title" subtitle="Overlay subtitle" />}
-                        >
+                        <CardMedia>
                             <img src={event2} className="events__image" alt="" />
                         </CardMedia>
                         <CardTitle title="Card title" subtitle="Card subtitle" />
@@ -53,8 +59,13 @@ class Events extends Component {
                             Aliquam dui mauris, mattis quis lacus id, pellentesque lobortis odio.
                         </CardText>
                         <CardActions>
-                            <FlatButton label="Interested" />
-                            <FlatButton label="Going" />
+                            <div className="events__cards-button">
+                                <FlatButton label="Interested" />
+                                <div className="events__cards-group">
+                                    <PeopleOutlineIcon  />
+                                    <span className="events__cards-numbers">20</span>
+                                </div>
+                            </div>
                         </CardActions>
                     </Card>
                 </div>
@@ -63,10 +74,9 @@ class Events extends Component {
                         <CardHeader
                             title="URL Avatar"
                             subtitle="Subtitle"
+                            avatar={ <Avatar icon={ <PersonIcon  /> }/> }
                         />
-                        <CardMedia
-                            overlay={<CardTitle title="Overlay title" subtitle="Overlay subtitle" />}
-                        >
+                        <CardMedia>
                             <img src={event1} className="events__image" alt="" />
                         </CardMedia>
                         <CardTitle title="Card title" subtitle="Card subtitle" />
@@ -77,8 +87,13 @@ class Events extends Component {
                             Aliquam dui mauris, mattis quis lacus id, pellentesque lobortis odio.
                         </CardText>
                         <CardActions>
-                            <FlatButton label="Interested" />
-                            <FlatButton label="Going" />
+                            <div className="events__cards-button">
+                                <FlatButton label="Interested" />
+                                <div className="events__cards-group">
+                                    <PeopleOutlineIcon  />
+                                    <span className="events__cards-numbers">8</span>
+                                </div>
+                            </div>
                         </CardActions>
                     </Card>
                 </div>

@@ -14,3 +14,17 @@
     height: 200px;
     object-fit: cover;
 }
+
+.events__cards-button{
+    display: flex;
+    justify-content: space-between;
+}
+
+.events__cards-group{
+    display: flex;
+    align-items: center;
+}
+
+.events__cards-numbers{
+    margin-left: 5px;
+}
