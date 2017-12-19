@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import Login from '../Auth/Login/index';
 import Events from '../Content/Events/index';
+import Profile from '../Content/Profile/index';
 import Registration from '../Auth/Registration/index';
 import Footer from './../Core/Footer/index';
 import {Route, Switch, Redirect} from 'react-router-dom'
@@ -15,6 +16,7 @@ class Core extends Component {
                         <Route path={`/login`} component={Login}/>
                         <Route path={`/registration`} component={Registration}/>
                         <Route path={`/events`} component={requireAuthentication(Events)}/>
+                        <Route path={`/profile`} component={requireAuthentication(Profile)}/>
                         <Redirect from="/*" to="/login"/>
                     </Switch>
                 </div>

@@ -15,7 +15,7 @@ class Header extends Component {
         return (
             <header className="header">
                 <div className="header__inner">
-                    <Link to={`/`}>
+                    <Link to={`/events`}>
                         <img className="header__logo" alt="logo" src={logo}/>
                     </Link>
                     {
@@ -48,9 +48,11 @@ class Header extends Component {
                                         </Badge>
                                     </li>
                                     <li className="navigation__item">
-                                        <Avatar className="navigation__avatar" icon={
-                                            <PersonIcon  />
-                                        }/>
+                                        <Link to={`/profile`}>
+                                            <Avatar className="navigation__avatar" icon={
+                                                <PersonIcon  />
+                                            }/>
+                                        </Link>
                                     </li>
                                 </ul>
                             </nav>
