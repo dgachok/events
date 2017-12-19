@@ -1,4 +1,3 @@
-import {LOGOUT_USER} from "./Auth/Login/actions";
 export const LOAD_USERS_ACTION = 'LOAD_USERS_ACTION';
 export const LOADED_USERS_ACTION = 'LOADED_USERS_ACTION';
 export const LOAD_USER_ACTION = 'LOAD_USER_ACTION';
@@ -27,16 +26,10 @@ export const loadedUser = (user) => ({
 });
 
 export const showError = (error) => {
-    if (error && error.status === 401) {
-        return ({
-            type: LOGOUT_USER
-        });
-    } else {
-        return ({
-            type: SHOW_ERROR_ACTION,
-            payload: error
-        });
-    }
+    return ({
+        type: SHOW_ERROR_ACTION,
+        payload: error
+    });
 };
 
 export const closeError = () => ({

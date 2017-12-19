@@ -3,7 +3,7 @@ import {showError, LOAD_USER_ACTION, loadedUser, loadUser, APP_INITIALIZE_ACTION
 import {registerEpic} from "./Auth/Registration/epic";
 import {loginEpic} from "./Auth/Login/epic";
 import {Observable} from 'rxjs/Rx';
-import {authenticateSuccess} from "./Auth/Login/actions";
+import {authenticateSuccess, logout} from "./Auth/Login/actions";
 import {fetch} from "./Auth/utils/fetch";
 import 'rxjs/add/operator/merge';
 import 'rxjs/add/operator/switchMap';
@@ -14,7 +14,9 @@ const userEpic = action$ =>
         .mergeMap(action =>
             fetch('get', '/api/v1/users/current-user')
                 .map((user) => loadedUser(user))
-                .catch((err) => Observable.of(showError(err)))
+                .catch((err) => Observable.merge(
+                    Observable.of(showError(err)),
+                    Observable.of(logout())))
         );
 
 const initEpic = action$ =>
