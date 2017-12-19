@@ -23,6 +23,10 @@ html, body {
     color: darkred;
 }
 
+.text-right{
+    text-align: right;
+}
+
 .cursor-pointer {
     cursor: pointer;
 }
