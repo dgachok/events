@@ -1,8 +1,8 @@
-import Profile from './component';
+import ProfileEvents from './component';
 import {connect} from 'react-redux';
 
 const mapStateToProps = state => ({
     user: state.user
 });
 
-export default connect(mapStateToProps)(Profile);
+export default connect(mapStateToProps)(ProfileEvents);

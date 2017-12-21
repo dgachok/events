@@ -24,9 +24,25 @@
     color: gray;
 }
 
-.profile__tabs-container {
+.content__row {
+    display: flex;
+    flex-direction: row;
+    margin: 10px 0;
 }
 
-.profile__tabs {
+.content__cell {
+    margin: 0 5px;
+}
 
+.profile__content-person {
+    padding: 10px;
+}
+
+.content__icon {
+    width: 20px;
+}
+
+.content__tags, .content__icon, .content__title {
+    display: flex;
+    align-items: center;
 }
