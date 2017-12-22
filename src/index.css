@@ -30,3 +30,8 @@ html, body {
 .cursor-pointer {
     cursor: pointer;
 }
+
+.m-w-sm {
+    margin-right: 5px !important;
+    margin-left: 5px !important;
+}

@@ -14,11 +14,18 @@ class Registration extends Component {
     onChange = (event) =>
         this.setState(...this.state, {[event.target.name]: event.target.value});
 
-    onChangeTags = (tags) =>
+    onChangeTags = (tags) => {
+        console.log('tags', tags);
+        console.log('tags...', {tags: tags});
+        console.log('tags', this.state);
+        console.log('state...', ...this.state, {tags: tags});
         this.setState(...this.state, {tags: tags});
+    };
+
 
     onSubmit = (event) => {
         event.preventDefault();
+        console.log('thihs.state', this.state);
         this.props.registerUser(this.state);
     };
 

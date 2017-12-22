@@ -12,23 +12,32 @@ class ProfileEvents extends Component {
                                   style={{
                                       'display': 'flex',
                                       'justify-content': 'flex-start',
-                                      'flex' : '1 1 100%',
+                                      'flex': '1 1 100%',
                                       'align-items': 'center'
                                   }}>
                     <RadioButton
                         value="your"
                         label="Your events"
-                        style={{flex: '1 1 30%'}}
+                        style={{
+                            flex: '1 1 auto',
+                            display: 'block'
+                        }}
                     />
                     <RadioButton
                         value="approved"
                         label="Approved events"
-                        style={{flex: '1 1 30%'}}
+                        style={{
+                            flex: '1 1 auto',
+                            display: 'block'
+                        }}
                     />
                     <RadioButton
                         value="requested"
                         label="Requested events"
-                        style={{flex: '1 1 30%'}}
+                        style={{
+                            flex: '1 1 auto',
+                            display: 'block'
+                        }}
                     />
                 </RadioButtonGroup>
                 <RaisedButton label="Create event"
