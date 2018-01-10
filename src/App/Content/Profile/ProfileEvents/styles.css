@@ -1,4 +1,23 @@
 .profile-content__events-header {
     padding: 20px 10px;
     display: flex;
+    justify-content: flex-end;
+}
+.profile-content__events-title {
+    flex: 1 0 auto;
+    font-size: 25px;
+    color: rgb(224, 224, 224);
+}
+
+.profile__tags {
+    display: flex;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+
+.profile__information {
+    width: 50%;
 }

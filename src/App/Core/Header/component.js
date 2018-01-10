@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {Link, NavLink} from 'react-router-dom'
 import './styles.css';
 import logo from './../../../images/logo.png';
+import TextField from 'material-ui/TextField';
 import Avatar from 'material-ui/Avatar';
 import Badge from 'material-ui/Badge';
 import IconButton from 'material-ui/IconButton';
@@ -18,6 +19,18 @@ class Header extends Component {
                     <Link to={`/events`}>
                         <img className="header__logo" alt="logo" src={logo}/>
                     </Link>
+                    {
+                        (isAuthenticated)
+                            ?
+                            <div className="header__search">
+                                <TextField
+                                    hintText="Search"
+                                    type="text"
+                                    name="search"
+                                />
+                            </div>
+                            : null
+                    }
                     {
                         (isAuthenticated)
                             ?

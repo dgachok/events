@@ -6,6 +6,8 @@
     "react-scripts": "1.0.17"
   },
   "dependencies": {
+    "create-react-class": "^15.6.2",
+    "google-map-react": "^0.26.0",
     "history": "^4.7.2",
     "material-ui": "^0.19.4",
     "material-ui-chip-input": "^0.18.3",

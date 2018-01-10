@@ -35,3 +35,12 @@ html, body {
     margin-right: 5px !important;
     margin-left: 5px !important;
 }
+
+.m-h-sm {
+    margin-top: 5px !important;
+    margin-bottom: 5px !important;
+}
+
+.m-sm {
+    margin: 5px !important;
+}

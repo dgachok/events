@@ -21,6 +21,14 @@
     flex-direction: row;
     flex-wrap: nowrap;
     list-style-type: none;
+    padding-left: 0;
+}
+
+.header__search {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .navigation__item {
