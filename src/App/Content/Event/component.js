@@ -1,15 +1,16 @@
 import React, {Component} from 'react';
-import './styles.css';
 import AddPhotoIcon from 'material-ui/svg-icons/image/add-a-photo';
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
 import ChipInput from 'material-ui-chip-input'
 import DatePicker from 'material-ui/DatePicker';
-import GoogleMapReact from 'google-map-react';
+import AutoComplete from 'material-ui/AutoComplete';
+import './styles.css';
 
 class Event extends Component {
     constructor(props) {
         super(props);
+        this.autocompleteService = new window.google.maps.places.AutocompleteService();
         const minDate = new Date();
         const maxDate = new Date();
         minDate.setFullYear(minDate.getFullYear() - 1);
@@ -18,7 +19,9 @@ class Event extends Component {
         maxDate.setHours(0, 0, 0, 0);
         this.state = {
             start_date: minDate,
-            end_date: maxDate
+            end_date: maxDate,
+            dataSource: [],
+            data: []
         };
         this.onChange = this.onChange.bind(this);
     }
@@ -46,6 +49,38 @@ class Event extends Component {
         event.preventDefault();
         console.log('this.state', this.state);
     };
+
+    updateDatasource(data) {
+        if (!data || !data.length) {
+            return false;
+        }
+
+        this.setState({
+            dataSource: data.map(place => place.description),
+            data
+        });
+    }
+
+    onUpdateInput(searchText, dataSource) {
+        console.log('searchText', searchText);
+        console.log('this.autocompleteService', this.autocompleteService);
+
+        if (!searchText.length || !this.autocompleteService) {
+            return false;
+        }
+
+        let request = {
+            input: searchText,
+            radius: 0,
+            types: [],
+        };
+
+        this.autocompleteService.getPlacePredictions(request, data => {
+            console.log('request', request);
+            console.log('data', data);
+            this.updateDatasource(data)
+        });
+    }
 
     render() {
         return (
@@ -83,6 +118,14 @@ class Event extends Component {
                             floatingLabelText="Tags"
                             onChange={this.onChangeTags}
                         />
+                        <AutoComplete
+                            openOnFocus={true}
+                            hintText="Type address"
+                            floatingLabelText="Address"
+                            fullWidth={true}
+                            onUpdateInput={this.onUpdateInput}
+                            dataSource={this.state.dataSource}
+                        />
                         <TextField
                             hintText="Description"
                             floatingLabelText="Please describe the event"
@@ -95,9 +138,7 @@ class Event extends Component {
                     <div className="event__map">
                         <div className="event__map-title">*choose location</div>
                         <div>
-                            <GoogleMapReact
-                                defaultCenter={{lat: 59.95, lng: 30.33}}
-                                defaultZoom={8} />
+
                         </div>
                     </div>
                 </div>
