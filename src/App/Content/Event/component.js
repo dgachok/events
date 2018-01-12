@@ -5,6 +5,7 @@ import RaisedButton from 'material-ui/RaisedButton';
 import ChipInput from 'material-ui-chip-input'
 import DatePicker from 'material-ui/DatePicker';
 import AutoComplete from 'material-ui/AutoComplete';
+import { withGoogleMap, GoogleMap, Marker } from "react-google-maps"
 import './styles.css';
 
 class Event extends Component {
@@ -83,6 +84,17 @@ class Event extends Component {
     }
 
     render() {
+        const MapWithAMarker = withGoogleMap(props =>
+            <GoogleMap
+                defaultZoom={8}
+                defaultCenter={{ lat: -34.397, lng: 150.644 }}
+            >
+                <Marker
+                    position={{ lat: -34.397, lng: 150.644 }}
+                />
+            </GoogleMap>
+        );
+
         return (
             <div>
                 <div className="event__title">
@@ -138,7 +150,10 @@ class Event extends Component {
                     <div className="event__map">
                         <div className="event__map-title">*choose location</div>
                         <div>
-
+                            <MapWithAMarker
+                                containerElement={<div style={{ height: `400px` }} />}
+                                mapElement={<div style={{ height: `100%` }} />}
+                            />
                         </div>
                     </div>
                 </div>
